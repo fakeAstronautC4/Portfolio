@@ -287,8 +287,9 @@ h5 {
 
 .image-container img {
     width: 100%;
-    height: auto;
+    min-height: 100%;
     display: block;
+    object-fit: cover;
 }
 
 .info-button {
@@ -347,7 +348,7 @@ h5 {
 
 .description p {
     margin: 10px;
-    font-size: 16px;
+    font-size: 19px;
     text-align: center;
     font-style: normal;
 }
