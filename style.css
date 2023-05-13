@@ -29,11 +29,10 @@ h5 {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
+    
 }
 
 .navbar ul li {
-    scroll-behavior: smooth;
     margin-left: 15px;
 }
 
@@ -41,7 +40,7 @@ h5 {
     padding: 12px;
     text-decoration: none;
     color: #ffffff;
-    scroll-behavior: smooth;
+    scroll-behavior:smooth
 }
 
 .nav-li a:hover {
