@@ -9,11 +9,10 @@ body{
     flex-direction: column; */
 }
 
-
-
 h5 {
     font-family: 'NP Naipol All in One', sans-serif;
 }
+
 /* ########################## Navbar ######################### */
 
 .navbar {
@@ -52,13 +51,14 @@ h5 {
 .toggle-btn {
     display: none;
     cursor: pointer;
-    z-index: 9999;
+    z-index: 99999;
     font-size: 30px;
+    position: fixed;
 }
 
 .dropdown-menu {
     width: 0px;
-    position: absolute;
+    position: fixed;
     right: 1px;
     top: 1px;
     background: rgba(38, 52, 85, 0.491);
@@ -70,12 +70,13 @@ h5 {
     transition: width .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+
 .dropdown-menu.open {
     position: fixed;
     width: 225px;
     height: 100%;
+    z-index: 99998;
 }
-
 
 .dropdown-menu li {
     display: flex;
@@ -84,6 +85,7 @@ h5 {
     margin-top: 15px;
     padding: 15px;
 }
+
 .dropdown-menu li a {
     margin-top: 15px;
     text-align: center;
@@ -94,13 +96,14 @@ h5 {
     scroll-behavior: smooth;
     font-size: 1.7em;
 }
+
 .dropdown-menu li a i {
     font-size: 19px;
 }
+
 .navbar ul li a i {
     font-size: 12px;
 }
-
 
 @media  (max-width: 780px) {
     .navbar ul li{
@@ -112,12 +115,12 @@ h5 {
     .dropdown-menu {
         display: block;
     }
+    
 }
-
 
 /* ########################## Greetings Text Div ######################### */
 
-#Neon_Lights {
+#home {
     min-width: 25%;
     max-width: 35%;
     margin-left: auto;
@@ -134,13 +137,15 @@ h5 {
     font-size: 2em;
     text-align: left;
 }
+
 .greeting h2 {
     font-family: 'NP Naipol All in One', sans-serif;
     text-align: right;
 }
+
 .greeting h1 {
     font-family: 'Earth Orbiter Laser', sans-serif;
-    font-size: 5.0em;
+    font-size: 5.5em;
     text-align: center;
     animation: pulsate 0.2s ease-in-out infinite alternate;
     text-shadow:
@@ -153,6 +158,7 @@ h5 {
     0 0 102px #0fa,
     0 0 151px #0fa;
 }
+
 @keyframes pulsate {
 
     100% {
@@ -177,7 +183,7 @@ h5 {
       0 0 80px #5271ff,
       0 0 94px #5271ff,
       0 0 140px #5271ff;
-  }
+  };
 
 }
 
@@ -230,7 +236,6 @@ h5 {
     font-size: 1.2em;
 }
 
-
 /* ##########################  Projects ####################### */
 .projects {
     display: flex;
@@ -251,6 +256,7 @@ h5 {
     margin-left: auto;
     margin-right: auto;
 }
+
 .project-header h1{
     font-size: 2em;
 }
@@ -278,18 +284,29 @@ h5 {
 .image-container {
     position: relative;
     border-radius: 10px;
-    overflow: hidden;
+    padding-bottom: 100%;
+    width: 100%;
 }
 
 .image-container h3{
     text-align: center;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0d0d29;
+    display: flex;
+    padding: 5px;
 }
 
 .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    min-height: 100%;
-    display: block;
+    height: 100%;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .info-button {
@@ -312,8 +329,6 @@ h5 {
     background-color: rgba(0, 0, 255, 0.8);
 }
 
-
-
 .description {
     position: absolute;
     top: 0;
@@ -327,30 +342,31 @@ h5 {
     /* background: rgba(24, 102, 228, 0.2); */
     background: rgba(70, 130, 227, 0.26);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.147);
     backdrop-filter: blur(7.7px);
     -webkit-backdrop-filter: blur(7.7px);
-    border: 1px solid rgba(70, 130, 227, 0.3);
+    border: 1px solid rgba(70, 130, 227, 0.703);
     transition: 0.8s ease-in-out;
 }
-
 
 .description a {
     margin: 10px;
     padding: 10px;
     border: 2px solid #4ee39d;
+    background-color: #0d0d29;
     border-radius: 5px;
     text-decoration: none;
-    color: #4ee39d;
+    color: #f3faf7;
     font-weight: bold;
     font-size: 1em;
 }
 
 .description p {
     margin: 10px;
-    font-size: 19px;
+    font-size: 25px;
     text-align: center;
-    font-style: normal;
+    font-weight: 900;
+    color: #07071b;
 }
 
 .project-btn{
@@ -361,10 +377,22 @@ h5 {
 }
 
 
-
-
-
-
+.warning {
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #f3faf7;
+    background-color: #0d0d29;
+    border: 5px solid #5271ff;
+    border-radius: 10px;
+    padding: 20px;
+    font-weight: 900;
+    font-size: 2.5em;
+    max-width: 300px;
+}
 /* ########################## Contact ######################### */
 .contact {
     display: flex;
@@ -449,7 +477,6 @@ h5 {
     left: 20%;
 }
 
-
 /* ########################## Links ######################### */
 
 #links{
@@ -489,6 +516,7 @@ h5 {
       max-width: 55%;
     }
 }
+
 @media screen and (max-width: 1200px) {
     .projects {
       max-width: 80%;
@@ -497,6 +525,7 @@ h5 {
         max-width: 80%;
     }
 }
+
 @media screen and (max-width: 800px) {
     .projects {
       max-width: 97%;
@@ -513,6 +542,7 @@ h5 {
         min-width: 90%;
     }
 }
+
 @media screen and (max-width: 600px) {
     .projects {
       flex-direction: column;
